@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List using DOM</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        .section-todo {
+            position: relative;
+            top: 30px;
+            width: 80%;
+            margin: auto;
+        }
+
+        input.todocolumn {
+            width: 400px;
+            border: 2px solid black;
+            padding: 5px;
+        }
+
+        input.btn {
+            padding: 5px;
+            background-color: rgb(7, 11, 52);
+            color: white;
+            width: 100px;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        button {
+            padding: 5px;
+            width: 70px;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="section-todo">
+        <h2>Your plan for today ?</h2>
+        <!-- todo form  -->
+        <form class="form-todo">
+            <input type="text" name="" class="todocolumn" placeholder="Add Todo" />
+            <input type="submit" value="Add Todo" class="btn" />
+        </form> <br>
+
+        <ul class="todo-list">
+            <li>
+                <span class="text">Do this do that</span>
+                <div class="todo-buttons">
+                    <button class="todo-btn done">Done</button>
+                    <button class="todo-btn remove">Remove</button>
+                </div>
+            </li>
+        </ul> 
+    </section>
+    <script>
+        const todoForm = document.querySelector(".form-todo");
+        const todoInput = document.querySelector(".form-todo input[type='text']");
+        const todoList = document.querySelector(".todo-list");
+
+        todoForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const newTodoText = todoInput.value;
+            const newLi = document.createElement("li");
+            const newLiInnerHtml = `
+            <span class="text">${newTodoText}</span>
+                <div class="todo-buttons">
+                    <button class="todo-btn done">Done</button>
+                    <button class="todo-btn remove">Remove</button>
+                </div> `
+            newLi.innerHTML = newLiInnerHtml;
+            todoList.append(newLi);
+            todoInput.value = "";
+        }
+        );
+        todoList.addEventListener("click", (e) => {
+            if (e.target.classList.contains("remove")) {
+                const targetedLi = e.target.parentNode.parentNode;
+                targetedLi.remove()
+            }
+            if (e.target.classList.contains("done")) {
+                const liSpan = e.target.parentNode.previousElementSibling;
+                liSpan.style.textDecoration = "line-through"
+            }
+        }
+        );
+    </script>
+
+    <!-- If you are engineer <input type="checkbox" id="check">
+    <script>
+        document.getElementById("check").addEventListener("click",
+        function(event){
+            event.preventDefault()
+        }
+        );
+    </script> -->
+    <!-- doubt
+    1) preventdefault use in this table
+    2) Click and Done Event  - all clear
+  -->
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritence</title>
+</head>
+<body>
+    <!-- Inheritence (with no child constructor)-->
+    <!-- <script>
+        class Animal{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            eat(){
+                return `${this.name} is eating`;
+            }
+            isSuperCute(){
+                return this.age <=1 ;
+            }
+            iscute(){
+                return true;
+            }
+        }
+        class Dog extends Animal{ // Dog(child) extends Animal(parent) means, Animal ki value Dog me aayegi
+
+        }// here this child(Dog) has no constructor, we'll make in next code
+        const tommy = new Dog("tommy", 3); //class ko bina object banaye print nhi karwa sakte
+        console.log(tommy);
+        console.log(tommy.iscute());
+    </script> -->
+
+    <!-- Inheritence (with child constructor) -->
+    <script>
+        class Animal{
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            eat(){
+                return `${this.name} is eating`;
+            }
+            isSuperCute(){
+                return this.age <=1 ;
+            }
+            iscute(){
+                return true;
+            }
+        }
+        class Dog extends Animal{ //here this child has constructor and values
+            constructor(name,age,speed){
+                super(name,age)// super tag is used to call the values of name & age  from parent
+                this.speed = speed;
+            }
+            run(){
+                return `${this.name} is runnning at ${this.speed} KMPH`;
+            }
+        }
+        const tommy = new Dog("Jimmy", 3, 65);
+        console.log(tommy);
+        console.log(tommy.run());
+    </script> 
+   
+</body>
+</html>

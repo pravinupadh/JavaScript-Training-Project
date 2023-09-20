@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random color generator</title>
+    <style>
+        * {
+            margin: 0%;
+            padding: 0%;
+        }
+
+        div.container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 200vh;
+        }
+        h1{
+            background-color: rgb(42, 40, 40);
+            color: white;
+            padding: 10px;
+            border-radius: 20px;
+            font-size: 25px;
+        }
+        button{
+            padding: 10px;
+            font-size: 19px;
+            display: block;
+        }
+        div.h1{
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="container">
+            <div class="h1">
+                <h1>Current Color : <span class="current-color">rgb(255,255,255)</span></h1> <br>
+                <button>Change backgroung color</button>
+            </div>
+        </div>
+    </main>
+    <script>
+        const mainButton = document.querySelector("button");
+        const body = document.body;
+        const currentColor = document.querySelector(".current-color");
+        function randomColorGenerator(){
+            const red = Math.floor(Math.random() * 256);
+            const green = Math.floor(Math.random() * 256);
+            const blue = Math.floor(Math.random() * 256);
+            const randomColor = `rgb(${red},${blue},${green})`
+            return randomColor;
+        }
+        mainButton.addEventListener("click",()=>{
+            const randomColor = randomColorGenerator();
+            body.style.backgroundColor = randomColor;
+            currentColor.textContent = randomColor;
+        }
+        );
+    </script>
+    
+</body>
+
+</html>

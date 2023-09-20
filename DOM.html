@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        #header{
+            width: 100%;
+            height: 40px;
+            background-color: rgb(84, 207, 218);
+            display: flex;
+            /* justify-content: space-between; */
+            align-items: center;
+        }
+        li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+        #list{
+            display: flex;
+            width: 50%;
+            justify-content: space-evenly;
+        }
+        .logo{
+            width: 30%;
+        }
+        #banner{
+            background-image: url("/1.jpg.jpg");
+            width: 80%;
+            height: 300px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+            left: 100px;
+        }
+        p{
+            width: 95%;
+            text-align: justify;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <nav id="header" >
+        <div class="logo">Invincible</div>
+        <ul id="list">
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Contact</a></li>
+            <li><a href="">Services</a></li>
+            <li><a href="">Feedback</a></li>
+        </ul>
+    </nav>
+    <div id="banner"></div>
+    <p id="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum harum optio quod deleniti adipisci eveniet assumenda doloremque sed nihil hic! Itaque, dicta? Quidem aspernatur sit, ex explicabo temporibus quasi placeat voluptatem similique? Quas atque quisquam facilis quibusdam optio tempora nobis natus! Sequi veniam beatae voluptatum odit, dolorum amet. Ipsa sint atque libero ratione sequi, possimus eligendi ducimus consequuntur. Autem rem, hic suscipit debitis tempore ducimus quae facere eius eum, expedita deserunt quod ipsa animi placeat laborum ab quos cum sapiente asperiores minus labore. Nisi nesciunt aspernatur ea id facere pariatur totam dolorem temporibus. Incidunt illo autem voluptatum iste itaque nihil dolore labore. Velit aut similique quas earum non dolor enim saepe iure! Sed earum ut commodi quisquam doloremque accusamus hic sapiente numquam aperiam nobis possimus repellat maiores natus obcaecati voluptates saepe, optio rem perspiciatis voluptas. Maxime, quos. Delectus dolore ea animi eius, ex omnis voluptas iure molestias repudiandae incidunt est quibusdam suscipit velit, tempora mollitia? Pariatur dolore molestias modi quas nesciunt repellendus porro, unde eos sequi ex magni animi? Aut perspiciatis dolorem optio assumenda impedit nobis amet, laborum, commodi quam, facere nulla neque. Eaque, qui! Est, eligendi sint. Deserunt, ullam dicta quam consectetur quaerat quo tempore natus, deleniti aut dolores obcaecati quas. Veniam impedit mollitia error exercitationem unde, ut et, aspernatur perferendis quia tenetur, vero quam. Vero eveniet hic eaque magnam autem nam nostrum officiis doloribus tempora, eum laboriosam! Fuga tenetur iure quasi voluptatibus! Iure debitis molestiae, temporibus, numquam eaque ut sunt quos officia, voluptate vitae dolor laudantium perspiciatis perferendis ratione fuga exercitationem excepturi accusamus iusto possimus harum! Voluptate alias ducimus tempore sed quam accusantium libero perspiciatis obcaecati nostrum, amet illo explicabo maxime qui animi error repudiandae incidunt reprehenderit ab omnis. Eligendi dolor numquam corporis perspiciatis natus delectus itaque eum, obcaecati vel. Quibusdam molestias, esse, tenetur quasi modi sed neque perspiciatis facere quas ea obcaecati harum quod minus! Hic nesciunt perferendis molestiae, corporis non iste dignissimos nobis nam assumenda totam tempore illo odit magni quidem! Explicabo delectus repudiandae maxime, quis inventore modi id, cumque minus corrupti et maiores aut consectetur voluptatem, mollitia adipisci facilis dicta earum laudantium rem. Odio quae hic unde impedit, ipsa amet quas voluptates error maiores et, nisi dolor magni veniam, exercitationem placeat at! Minima necessitatibus repellat blanditiis soluta non dolor aspernatur excepturi aliquam odio consequuntur animi corporis delectus, pariatur explicabo quaerat consequatur hic, reiciendis possimus id culpa quisquam molestiae. Saepe, atque dolor? Doloremque cumque illum, repellat quas est beatae sequi recusandae incidunt sit possimus delectus praesentium ut voluptatibus. Non facere rerum tenetur hic, itaque reprehenderit impedit, sed, alias odit error officiis dignissimos illo maiores ad! Fuga, ipsam nulla? Consequuntur similique, consequatur ullam quis aut autem ipsam! Harum, cum nihil iure itaque autem, aliquam architecto quam velit necessitatibus, illo officia odio reprehenderit. Hic consequuntur labore sapiente dolores quam unde earum, ut ex facilis magni nisi quis, corrupti asperiores sunt! Quam, iusto incidunt. At commodi nulla, aspernatur quod, rem ratione ab molestias suscipit repudiandae eligendi quis, eum necessitatibus fuga laborum. Dolor accusamus maxime quod dolorem ipsa officia ullam!</p>
+    <script>
+        var changes;
+        changes = document.getElementById("banner").addEventListener('click',border);
+        changes = document.getElementById("banner").addEventListener('mouseout',border1);
+
+        function border(){
+            document.getElementById("banner").style.border = "2px solid green";
+        
+        }
+         function border1(){
+            document.getElementById("banner").style.border = "none";
+        }
+
+
+        var ptag;
+        
+        function para1(){
+            document.getElementById("para").style.background = "rgb(32, 233, 32)";
+        }
+        function para2(){
+            document.getElementById("para").style.background = "none";
+        }
+        ptag = document.getElementById("para").addEventListener('mouseover',para1)
+        ptag = document.getElementById("para").addEventListener('mouseout',para2)
+
+    </script>
+    
+</body>
+</html>

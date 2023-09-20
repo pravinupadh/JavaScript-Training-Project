@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iterable, Map Method, Class in loop</title>
+    <style>
+        marquee{
+            border: 2px solid black;
+           width: 500px;
+           background-color: aqua;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Marquee Tag  -->
+
+    <marquee behavior="" direction="" scrolldelay="300"  scrollamount="">This stream is for Education purpose only, we do not recommend any buy sell advise</marquee>
+    <!-- https://www.w3schools.in/html/marquee-tag -->
+
+    <!-- Map Method  -->
+    <!-- <script>
+        const person1 = {
+            id: 131,
+            firstName: "Gracy Stempher"
+        }
+        const person2 = {
+            id: 241,
+            firstName: "Steve Harrington"
+        }
+        const extraInfo = new Map();
+        extraInfo.set(person1, {age: 28, gender: "female"});
+        extraInfo.set(person2, {age: 18, gender: "male"});
+        console.log(person1.firstName);
+        console.log(extraInfo.get(person1).gender);
+        console.log(extraInfo.get(person2).gender);
+    </script> -->
+
+    <!-- Assign - clone using object.assign  -->
+    <!-- <script>
+        const obj = {
+            key1: "Take Right",
+            key2: "Go straight",
+        }
+        const obj2 = Object.assign({'Key3': "Take 2nd left for temple"}, obj) //1st method to add Key3
+        console.log(obj2);
+        
+        obj.key3 = "take U turn to reach T-point";
+        console.log(obj);
+    </script> -->
+
+    <!-- OOPS - class in loop  -->
+    <script>
+        class userData {
+            constructor(firstName, lastName, email, age, address) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.email = email;
+                this.age = age;
+                this.address = address;
+            }
+            class1(){
+                return`${this.firstName} is ${this.age} years old.`;
+            }
+            class2(){
+                return`${this.firstName} lives at ${this.address}.`;
+            }
+            class3(){
+                return`${this.firstName} email is ${this.email}.`;
+            }
+        }
+        const user1 = new userData('Gracy', 'stampher', 'gracyste103@yahoo.com', 18, 'dortmond 12 New York');
+        const user2 = new userData('Steve', 'harrington', 'steve.harry@yahoo.com', 28, 'd316 waitress New York');
+        const user3 = new userData('William', 'wallace', 'william@yahoo.com', 38, '556 New colony Florida');
+       console.log(user1.class3());
+    </script>
+    <!-- 1) obj2 me order q change ho gaya hai
+    2) class ka output nhi aa raha  -->
+</body>
+
+</html>

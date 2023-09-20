@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <!-- ////////////////////// EVENT HANDLER /////////////////////////// -->
+    <script>
+        // Mouse hover event 
+
+        // function mouseoverevent() {
+        //     document.write("Hello");
+        // }        
+        function mouseoutevent() {
+            document.write("Hello");
+        }
+        
+    </script>
+    <p id="hover" onmouseover="mouseoutevent()" >Stay Hovering</p>
+    <!-- ----------------------------------------------------------- -->
+    <!-- Focus and Blur event - Upon clicking some point(as defined in fx) it will focus on that point and change colour
+    Blur event - When we take off the cursor out of some input box it will change to letters to uppercase-->
+
+    <!-- Name <input type="text" id="demo" onfocus="focusevent()" onblur="whenBlur()">
+    <script>
+        function focusevent() {
+            document.getElementById("demo").style.background = "aqua"
+        }
+        function whenBlur() {
+            var x = document.getElementById("demo");
+            x.value = x.value.toUpperCase();
+        }
+    </script> -->
+    <!-- --------------------------------------------------- -->
+    <!-- Mouse out Event - Once we take off the Mouse from the para -->
+
+    <!-- <script>
+        function mouseout() {
+            document.getElementById("out").style.background = "aqua"
+        }
+    </script>
+    <p id="out" onmouseout="mouseout()">g | Lateaas 2022 2022 Libaas 2022 New Punjabi Song | Kaka | Kaka New Song |
+        Latest Punjabi Song 2022 Liba</p> -->
+    <!-- -------------------------------------------- -->
+    <!-- On Click Event, Whenever we will click on any button, it will pop up an alert  -->
+
+    <!-- <button id="click" onclick="mouseclick()">DO NOT TOUCH</button>
+    <script>
+        function mouseclick() {
+            document.getElementById("click");
+            alert("Ayye Hayeee Raha Nhi Jata, Talab hi aise hai !!")
+        }
+    </script> -->
+    <!-- ---------------------------------------------------- -->
+    <!-- Key down Event - Upon Writing in this inout box it will show an alert -->
+
+    <!-- <input type="text" id="keydown" onkeyup="keydownevent()" />
+    <script>
+        function keydownevent() {
+            document.getElementById("keydown");
+            alert("Write only Bold Letters");
+        }
+    </script> -->
+
+
+    <!-- ////////////////////// EVENT Listner /////////////////////////// -->
+
+    <p>set of elements, the HTML document loaded in the current tab, or the windofferent types of cur.</p>
+    <button id="btn">cick me</button>
+    <p id="para"></p>
+    <script>
+        function fun() {
+            btn.style.width = "50px";
+            btn.style.height = "100px";
+            btn.style.background = "Yellow";
+            btn.style.color = "blue";
+        }
+        function fun1() {
+            document.getElementById("para").innerHTML = "Danger <br> 3000 volts";
+        }
+
+        function fun2() {
+            btn.style.width = "";
+            btn.style.height = "";
+            btn.style.background = "";
+            btn.style.color = "";
+        }
+        var mybtn = document.getElementById("btn");
+        mybtn.addEventListener("mouseover", fun);
+        mybtn.addEventListener("click", fun1);
+        mybtn.addEventListener("mouseout", fun2);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body id="box">
+    <!-- <h1>Java Script</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem cupiditate optio ullam architecto hic, ducimus
+        repellat ab ipsa, fugit dolor earum quisquam veniam distinctio reprehenderit? Dignissimos autem neque quasi
+        ducimus ipsum quis dolorem ab perspiciatis odio doloribus maiores, accusantium est rerum vero modi corrupti,
+        ratione facere ad quam in! Fugiat!</p> -->
+
+        <!-- ---------------------------
+        Click Event with colours          -->
+        <button onclick="return(click())" >click</button>
+        <script>
+            var box = document.getElementById('box'),
+            colors = ['purple', 'yellow', 'orange', 'brown', 'blue'];
+
+            box.onclick = function click() {
+                color = colors.shift();
+                colors.push(color);
+
+                box.style.backgroundColor = color;
+            }
+        </script>
+
+    <script src="/file.js"></script>
+
+
+</body>
+
+</html>

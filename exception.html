@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Exception, Event Bubbling, Error & Dynamic color</title>
+</head>
+
+<body>
+    <!-- Error handling  -->
+    <input type="button" value="Click Me" onclick="myFunc()">
+  <script>
+    function myFunc(){
+        var a = 100;
+        var b = 0;
+        try{
+            if(b==0){
+                throw("Divide by zero error");
+            }else{
+                var c = a/b;
+                alert("answer:" + c);
+            }
+        }
+        catch(e){
+            alert("Error:" + e);
+        }
+    }
+
+    window.onerror = function(){ //This error can be shown in other way as well if that click button does not found any myFunc function
+        alert("An error Occured");
+    } 
+  </script>
+
+    <!-- Event Bubbling -->
+    <h1 id="id" style="border: 2px solid black; color: black;">Click here</h1>
+    <script>
+        document.getElementById("id").addEventListener("dblclick", myH1);
+
+        function myH1() {
+            document.getElementById("id").style.backgroundColor = "green";
+        }
+    </script>
+
+    <!-- Dynamic Colour  -->
+    <h1 id="heading">This is heading</h1>
+    <p>Let's fill some colours on Holi</p>
+    <hr>
+    <div>
+        <label for="">Here are some choices for you of background </label>
+        <button type="button" onclick="background('Yellow')">Yellow</button>
+        <button type="button" onclick="background('lime')">Lime</button>
+        <button type="button" onclick="background('Orange')">Orange</button>
+    </div>
+    <br>
+    <div>
+        <label for="">Here are some choices for you of Heading</label>
+        <button type="button" onclick="headingColor('Red')">Red</button>
+        <button type="button" onclick="headingColor('green')">Green</button>
+        <button type="button" onclick="headingColor('Blue')">Blue</button>
+    </div>
+    <script>
+        function background(color){
+            document.body.style.background = color; 
+        }
+        function headingColor(color){
+            document.getElementById("heading").style.backgroundColor = color;
+        }
+
+    </script>
+</body>
+
+</html>

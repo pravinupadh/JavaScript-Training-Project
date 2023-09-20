@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+    <style>
+        #test {
+            width: 150px;
+            height: 150px;
+            background-color: red;
+            border-radius: 25%;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div id="test"></div>
+    <script>
+        var a = 0; //0px
+        var id = setInterval(Anim,500); //1000 is milisecond which is 1 sec so it will take 1 second to moove 20px
+
+        function Anim(){
+            a = a + 50; //this 50 is the distance(50px) which dice will jump in each 1 second
+            if(a == 500){ //this 500 is distance (500px) which dice will cover in total and stop going ahead, if we make it 1000px then dice will move till right end of the screen
+                clearInterval(id);
+            } else{
+                var target = document.getElementById("test");
+                target.style.marginLeft = a + 'px';
+            }
+
+        }
+    </script> <br> <br>
+   
+    <div>
+        
+
+</body>
+
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/owl.carousel.min.css">
+    <link rel="stylesheet" href="/owl.theme.green.css">
+    <script src="/jquery.min.js"></script>
+    <script src="/owl.carousel.min.js"></script>
+    <title>Call Back, Asynchronmus, Promise, Owl Carousel</title>
+    <style>
+        .item{
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+            margin-left: 10px;
+            color: white;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Call back Function  -->
+    <p id="demo"></p>
+    <script>
+        function myDisplayer(some){
+            document.getElementById("demo").innerHTML = some;
+        }
+        function myCalculator(num1, num2){
+            let sum = num1 + num2;
+            return sum;
+        }
+        let results = myCalculator(10,15);
+        myDisplayer(results);
+    </script>
+
+    <!-- Asynchronus function  -->
+    <h1 style="border: 2px solid black; display: inline; padding: 5px; color: brown;" id="text"></h1>
+    <script>
+        setTimeout(myFunction, 2000)
+
+        function myFunction(){
+            document.getElementById("text").innerHTML = "Hello Upadhyay Ji";
+        }
+
+        function myFunction1(){
+            document.getElementById("text").innerHTML = "";
+        }
+
+        var myText = document.getElementById("text")
+        myText.addEventListener("click",myFunction1);
+    </script>
+
+    <!-- Promise -->
+    <script>
+        var Promise = new Promise(function(resolve,reject){
+            const x = "Pravin";
+            const y = "Praveen";
+            if(x === y){
+                resolve();
+            }else{
+                reject();
+            }
+        });
+        Promise.
+        then(function (){
+            document.write("Hello Mr. Pravin");
+        }).
+        catch(function (){
+            document.write("Sorry! Your Name is incorrect.")
+        });
+    </script>
+
+    <!-- Owl Carousel  -->
+
+    <div class="owl-carousel owl-theme" >
+        <div class="item"><h4>1</h4></div>
+        <div class="item"><h4>2</h4></div>
+        <div class="item"><h4>3</h4></div>
+        <div class="item"><h4>4</h4></div>
+        <div class="item"><h4>5</h4></div>
+        <div class="item"><h4>6</h4></div>
+        <div class="item"><h4>7</h4></div>
+        <div class="item"><h4>8</h4></div>
+        <div class="item"><h4>9</h4></div>
+        <div class="item"><h4>10</h4></div>
+        <div class="item"><h4>11</h4></div>
+        <div class="item"><h4>12</h4></div>
+    </div>
+    <script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 3
+                },
+                1000: {
+                    items: 5
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

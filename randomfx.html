@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Use of Random Fx</title>
+</head>
+
+<body>
+    <script>
+        // let x = Math.floor(Math.random()*100);
+        // document.write(x);
+
+        // let y = Math.floor(Math.random() * (55 - 76)) + 55;
+        // document.write(y);
+
+        // function getRandom(min,max){
+        //     let y = Math.floor(Math.random() * (min - max)) + min;
+        //     return y;
+        // }
+        // document.write(getRandom(55, 87));
+    </script>
+
+    <button onclick="makeiD(3)">Click to get OTP</button>
+    <p id="para"></p>
+
+    <script>
+        function makeiD(length) {
+            let result = '';
+            const characters = "ABCDEFGHIJKLMNOPQRSATUVWXYZ";
+            const charactersLength = characters.length;
+            let counter = 0;
+            while (counter < length) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength))
+                counter += 1;
+            }
+            document.getElementById("para").innerHTML = `${result}`
+        }
+        // function output(){
+        //     document.getElementById("para").innerHTML = `${result};`
+        // }
+        // const mainButton = document.querySelector("button");
+        // mainButton.addEventListener("click", makeiD);
+
+        // function character(length){
+        //     var counter = 0;
+        //     var answer = "";
+        //     for(var i = 50; i<=100; i++){
+           
+        //         answer += i.Number(Math.floor(Math.random() * i.length))
+                
+        //     }
+        //     return answer;
+        // }
+        // document.write(character(4));
+
+
+
+        
+    </script>
+<!-- Button Banana hai click pe
+Print name
+W3 school side Nav Bar  -->
+</body>
+
+</html>
